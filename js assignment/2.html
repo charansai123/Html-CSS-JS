@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            JAVASCRIPT TIME DATE
+
+        </title>
+        <script>
+            
+            function date(){
+                var d=new Date();
+                var n1=d.getDate();
+                var n2=d.getMonth();
+                var n3=d.getFullYear();
+               document.getElementById("demo1").innerHTML=n1+"/"+n2+"/"+n3;
+                
+            }
+            
+            function time(){
+                var t=new Date();
+                var hours=t.getHours();
+                var minutes=t.getMinutes();
+                var seconds=t.getSeconds();
+                if(hours<10){
+                    hours="0"+hours;
+                }
+                if(minutes<10){
+                    minutes="0"+minutes;
+                }
+                if(seconds<10){
+                    seconds="0"+seconds;
+                }
+                var clockTime=hours+":"+minutes+":"+seconds;
+                document.getElementById("demo2").innerHTML=clockTime;
+                setTimeout('time()',500);
+              
+            }
+        </script>
+    </head>
+    <body style="text-align: center;font-size: xx-large;background-color: cornsilk;">
+       
+        <p>The date is:</p>
+        <p id="demo1"></p>
+        <script>window.onload=date();</script>
+       
+        <p>The time is:</p>
+        <p id="demo2"></p>
+        <script type="text/javascript">window.onload=time();</script>
+       
+       
+    </body>
+</html>

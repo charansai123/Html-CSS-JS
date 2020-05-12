@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <TITLE>
+            Date Conversion
+        </TITLE>
+        
+    </head>
+    <body style="background-color: burlywood;">
+        <script src="1.js"></script>
+        <script>
+            var str1=prompt("Enter Date of Birth (dd/mm/yyyy): ","");
+            var strArr=Array.from(str1);//storing date of birth into char array
+            var index1=strArr[0];
+            var date1=parseInt(index1);
+            var index2=strArr[1];
+            var date2=parseInt(index2);
+            var index3=strArr[3];
+        
+            var index4=strArr[4];
+        
+            var index5=strArr[6];
+            
+            var index6=strArr[7];
+            
+            var index7=strArr[8];
+            
+            var index8=strArr[9];
+            
+            if(date1==0){
+                if(date2==1){
+                    var d="One";
+                }
+                if(date2==2){
+                    var d="Two";
+                }
+                if(date2==3){
+                    var d="Third";
+                }
+                if(date2==4){
+                    var d="Fourth";
+                }
+                if(date2==5){
+                    var d="Fifth";
+                }
+                if(date2==6){
+                    var d="Sixth";
+                }
+                if(date2==7){
+                    var d="Seventh";
+                }
+                if(date2==8){
+                    var d="Eighth";
+                }
+                if(date2==9){
+                    var d="Ninth";
+                }
+            }
+            if(date1==1){
+                if(date2==0){
+                    var d="Tenth";
+                }
+                if(date2==1){
+                    var d="Eleventh";
+                }
+                if(date2==2){
+                    var d="Twelth";
+                }
+                if(date2==3){
+                    var d="Thirteenth";
+                }
+                if(date2==4){
+                    var d="Fourteenth";
+                }
+                if(date2==5){
+                    var d="Fifteenth";
+                }
+                if(date2==6){
+                    var d="Sixteenth";
+                }
+                if(date2==7){
+                    var d="Seventeenth";
+                }
+                if(date2==8){
+                    var d="Eighteenth";
+                }
+                if(date2==9){
+                    var d="Nineteenth";
+                }
+            }
+            if(date1==2){
+                if(date2==0){
+                    var d="Twentieth";
+                }
+                if(date2==1){
+                    var d="Twenty One";
+                }
+                if(date2==2){
+                    var d="Twenty Two";
+                }
+                if(date2==3){
+                    var d="Twenty Third";
+                }
+                if(date2==4){
+                    var d="Twenty Fourth";
+                }
+                if(date2==5){
+                    var d="Twenty Fifth";
+                }
+                if(date2==6){
+                    var d="Twenty Sixth";
+                }
+                if(date2==7){
+                    var d="Twenty Seventh";
+                }
+                if(date2==8){
+                    var d="Twenty Eighth";
+                }
+                if(date2==9){
+                    var d="Twenty Nineth";
+                }
+            }
+            if(date1==3){
+                if(date2==0){
+                    var d="Thirtieth";
+                }
+                if(date2==1){
+                    var d="Thirty One";
+                }
+            }
+            var monthArr=['January','Febrauary','March','April','May','June','July','August','September','October','November','December']
+            var m=index3+index4;
+            var mon=parseInt(m);
+            var month=monthArr[mon-1];
+            var y=index5+index6+index7+index8;
+            var year=parseInt(y);
+            var words=toWords(year);
+            alert(d+" "+month+" "+words);
+           
+        </script>
+    </body>
+</html>

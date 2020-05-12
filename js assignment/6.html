@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- JSFormValidation.html -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTML Student Form Input Validation Using JavaScript</title>
+  <style>
+      
+        .required {  /* Marker for required fields */
+            color: red;
+        }
+ 
+        .errorMsg {  /* for error messages */
+            color: red;
+        }
+ 
+        .errorBox {  /* for the error input text fields */
+            border: 2px solid red;
+        }
+ 
+        table {
+            border: 0;
+        }
+ 
+        td {
+            margin: 0;
+            padding: 3px 10px;
+        }
+        #btnSubmit{
+            width: 40%;
+            background-color:green;
+            color: #000;
+            padding: 10px 16px;
+            margin: 6px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #btnReset{
+            width: 40%;
+            background-color:rgb(240, 6, 52);
+            color: #000;
+            padding: 10px 16px;
+            margin: 6px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+  </style>
+  <script src="6.js"></script>
+</head>
+<center>
+<body style="background-color:rgb(13, 235, 235)">
+    
+  <h2>HTML Student Form Input Validation Using JavaScript</h2>
+ 
+  <form id="formTest" method="get" action="processData">
+    <table>
+        <tr>
+            <td><label for="txtName">Name<span class="required">*</span></label></td>
+            <td><input type="text" id="txtName" name="name"></td>
+            <td id="elmNameError" class="errorMsg">&nbsp;</td></tr>
+        <tr>
+            <td><label for="txtPhone">Phone<span class="required">*</span></label></td>
+            <td><input type="text" id="txtPhone" name="phone"></td>
+            <td id="elmPhoneError" class="errorMsg">&nbsp;</td></tr>
+    
+        <tr>
+            <td><label for="txtAddress">Address<span class="required">*</span></label></td>
+            <td><input type="text" id="txtAddress" name="address"></td>
+            <td id="elmAddressError" class="errorMsg">&nbsp;</td></tr>
+        <tr>
+            <td><label for="txtCity">City<span class="required">*</span></label></td>
+            <td><input type="text" id="txtCity" name="city"></td>
+            <td id="elmCityError" class="errorMsg">&nbsp;</td></tr>
+        <tr>
+            <td><label for="txtState">State<span class="required">*</span></label></td>
+            <td><input type="text" id="txtState" name="state"></td>
+            <td id="elmStateError" class="errorMsg">&nbsp;</td></tr>
+        <tr>
+            <td><label for="txtZipcode">Pin Code<span class="required">*</span><span class="required">*</span></label></td>
+            <td><input type="text" id="txtZipcode" name="zipcode"></td>
+            <td id="elmZipcodeError" class="errorMsg">&nbsp;</td></tr>
+   
+   
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Submit" id="btnSubmit">&nbsp;
+            <input type="reset" value="Reset" id="btnReset"></td>
+            <td>&nbsp;</td></tr>
+    </table>
+  </form>
+</body>
+</center>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <title>LIST APPEND</title>
+        <style>
+            button {
+                background-color: #4CAF50; 
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+
+        button{
+            background-color: white; 
+            color: black; 
+            border: 2px solid #4CAF50;
+            }
+
+        button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+       
+        </style>
+    </head>
+    <body style="font: x-large;font-style: italic;">
+        <ul id="ul" style="list-style-type: circle;">
+            <li>Coffee</li>
+            <li>Tea</li>
+        </ul>
+        <p>Click on button to append to list</p>
+        <button onclick="listAppend()">Click</button>
+        <script>
+            function listAppend(){
+                var liElement = document.createElement('li');
+                var liNode = document.createTextNode("Water");
+                liElement.appendChild(liNode);
+                document.getElementById("ul").appendChild(liElement);
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <title>
+            Editor
+        </title>
+        <style>
+            #demo2{
+                font-size: xx-large;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: darkgrey;
+                background-color: darkred;
+            }
+            .button {
+                 background-color: #4CAF50; 
+                 border: none;
+                 color: white;
+                 padding: 15px 32px;
+                 text-align: center;
+                 text-decoration: none;
+                 display: inline-block;
+                 font-size: 16px;
+                 margin: 4px 2px;
+                 cursor: pointer;
+            }
+            .button{
+                background-color: white; 
+                color: black; 
+                border: 2px solid #4CAF50;
+            }
+
+            .button:hover {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="demo1">
+                JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multiparadigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
+                <p></p>  
+                Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web.[8] JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it for client-side page behavior, and all major web browsers have a dedicated JavaScript engine to execute it. 
+                <p></p>
+                As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM). However, the language itself does not include any input/output (I/O), such as networking, 
+                storage, or graphics facilities, as the host environment (usually a web browser) provides those APIs.  
+                <p></p>
+                JavaScript engines were originally used only in web browsers, but they are now embedded in some server-side website deployments, usually via Node.js. They are also embedded in a variety of applications created with frameworks such as Electron and Cordova.  
+                <p></p>
+                Although there are similarities between JavaScript and Java, including language name, syntax, and respective standard libraries, the two languages are distinct and differ greatly in design.
+        </div>
+        <button class="button" type="button" onclick="editParagraph()">Edit</button>
+        <p id="demo2"></p>
+        <script>
+            function editParagraph(){
+                document.getElementById("demo1").contentEditable= true;
+                document.getElementById("demo2").innerHTML="The above paragraph is Editable try to change text";
+            }
+        </script>
+    </body>
+</html>
+    
+    

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration validation </title>
+    <script>
+        function allLetter(inputtxt) {
+            var letters = /^[A-Za-z]+$/;
+            return (inputtxt.match(letters))
+        }
+
+        function allnumber(inputtxt) {
+            var letters = /^[0-9]+$/;
+            return (inputtxt.match(letters))
+        }
+
+        function myfunc() {
+            var k = 0;
+            
+            if (allLetter(document.getElementById("Name").value)) {
+                k++;
+                document.getElementById("nam").style.display = "none";
+            } else {
+                document.getElementById("nam").style.display = "inline";
+            }
+            if (allnumber(document.getElementById("phone").value) && document.getElementById("phone").value.length == 10) {
+                k++;
+                document.getElementById("ph").style.display = "none";
+            } else {
+                document.getElementById("ph").style.display = "inline";
+            }
+            if (allnumber(document.getElementById("pincode").value) && document.getElementById("pincode").value.length == 6) {
+                k++;
+                document.getElementById("pin").style.display = "none";
+            } else {
+                document.getElementById("pin").style.display = "inline";
+            }
+            if (k === 3) {
+                document.getElementById("submit").disabled = false;
+            }
+        }
+
+        function myfunc2() {
+            alert("Form Submitted Successfully!");
+        }
+
+        function cityField(val) {
+            if (val == 1) {
+                alert("City=" + document.getElementById("city").value);
+            }
+            if (val == 2) {
+                alert("City=" + document.getElementsByClassName("city1")[0].value);
+            }
+            if (val == 3) {
+                alert("City=" + document.getElementsByTagName("input")[3].value);
+            }
+            if (val == 4) {
+                alert("City=" + document.querySelector("#city").value);
+            }
+            if (val == 5) {
+                alert("City=" + document.querySelector(".city1").value);
+            }
+            if (val == 6) {
+                alert("City=" + document.querySelectorAll("input")[3].value);
+            }
+        }
+
+        function zipfunc() {
+            var city = document.getElementById("city").value;
+            if (city == "chennai" || city == "Chennai") {
+                document.getElementById("pincode").value = 600001;
+            }
+            if (city == "amritapuri" || city == "Amritapuri") {
+                document.getElementById("pincode").value = 690546;
+            }
+            if (city == "vijayawada" || city == "Vijayawada") {
+                document.getElementById("pincode").value = 502355;
+            }
+
+            if (city == "Kochi" || city == "Kochi") {
+                document.getElementById("pincode").value = 682003;
+            }
+            if (city == "thiruvananthapuram" || city == "Thiruvananthapuram") {
+                document.getElementById("pincode").value = 609036;
+            }
+        }
+
+        function MyInputBox() {
+            document.getElementById("name").focus();
+        }
+    </script>
+    <style>
+        ul {
+            display: table;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body onLoad="MyInputBox();" style="background-color: rgb(18, 218, 218);">
+    <div style="text-align: center;">
+        <h1 id="question">7(a,b,c)</h1>
+        <form action="#">
+            <h2>Student Registration Form</h2>
+            <table style="margin: auto;">
+                <tr>
+                    <td style="text-align: right;"><label for="Name">Name:</label></td>
+                    <td style="text-align: left;"><input type="text" name="Name" id="Name" required autofocus><span style="display: none;" id="nam">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><label for="phone">Phone</label></td>
+                    <td style="text-align: left;"><input type="number" name="phone" id="phone" required><span style="display: none;" id="ph">*enter 10digit number</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><label for="address">Address:</label></td>
+                    <td style="text-align: left;"><input type="text" name="address" id="address" required><br></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><label for="city">City:</label></td>
+                    <td style="text-align: left;"><input type="text" name="city" id="city" class="city1" oninput="zipfunc()" required><br></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><label for="State">State:</label></td>
+                    <td style="text-align: left;"><input type="text" name="state" id="state" required><br></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><label for="pin">Pincode:</label></td>
+                    <td style="text-align: left;"><input type="number" name="pincode" id="pincode" required><span style="display: none;" id="pin">*enter 6digit pincode</span><br></td>
+                </tr>
+            </table>
+            <button id="check" type="button" onclick="myfunc()">Check</button><br><br>
+            <button type="submit" id="submit" disabled onclick="myfunc2()">Submit</button>
+            <button type="reset">Reset</button><br>
+        </form>
+       
+        <h3>Different ways Accessing City Field:</h3>
+        <ul>
+            <a href="javascript:cityField(1);">
+                <li>document.getElementById("city").value</li>
+            </a>
+            <a href="javascript:cityField(2);">
+                <li>document.getElementsByClassName("city1")[0].value</li>
+            </a>
+            <a href="javascript:cityField(3);">
+                <li>document.getElementsByTagName("input")[3].value</li>
+            </a>
+            <a href="javascript:cityField(4);">
+                <li>document.querySelector("#city").value</li>
+            </a>
+            <a href="javascript:cityField(5);">
+                <li>document.querySelector(".city1").value</li>
+            </a>
+            <a href="javascript:cityField(6);">
+                <li>document.querySelectorAll("input")[3].value</li>
+            </a>
+        </ul>
+        <h3>Cities and Respective pincodes</h3>
+        <ul>
+            <li><b>Chennai : 600001</b></li>
+            <li><b>Amritapuri : 690546</b></li>
+            <li><b>Vijaywada : 502355</b></li>
+            <li><b>Kochi : 682003</b></li>
+            <li><b>Thiruvananthapuram : 609036</b></li>
+        </ul>
+    </div>
+</body>
+
+</html>
